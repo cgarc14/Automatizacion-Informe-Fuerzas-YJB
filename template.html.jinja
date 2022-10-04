@@ -1,0 +1,271 @@
+<html>
+    <style>
+
+        @font-face {
+            font-family: 'Poppins-Light';
+            src: url(Miscelaneo/FontsFree-Net-Poppins-Light.ttf);
+        }
+
+        .header {
+            position:top;
+            text-align: right;
+            opacity: 0.75;
+        }
+
+        .footer {
+            position: bottom;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            opacity: 0.60;
+        }
+
+        .page{
+            width: 8in;
+            height: 15in;
+        }
+
+        hr{
+            background-color: orange;
+            width: 85%;
+            text-align: center;
+        }
+        .sections{
+            margin-left: 1in;
+            page-break-after: auto;
+
+        }
+        .end_test{
+            text-align: justify;
+            margin-left: 2.125in;
+        }
+
+    </style>
+    <div class="page">
+        <body>
+            <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+            <!-- IMAGEN LOGO YJB -->
+        <div class="header">
+            <img src="https://myfiles.space/user_files/129545_1876ad20ffd4a58d/1662590128_plantilla-evaluacion-fuerzas/1662590128_plantilla-evaluacion-fuerzas-1.png" 
+            width="148" height="58"> 
+        </div>
+            
+
+        </br></br></br></br>
+            <!-- SECCION DATOS PACIENTE -->
+            <div class="sections">
+                <strong style="font-family:'Poppins-Light';">&emsp;&nbsp;Antecedentes</strong><br><br>
+                <table cellpadding="0" cellspacing="0" style="width:470.45pt; border-collapse:collapse;" align="center">
+                    <tbody>
+                        <tr>
+                            <td style="width:208.7pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="nombre_paciente" style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt;"><span style="font-family:'Poppins-Light';">Nombre: {{nombre_paciente}} </span></p>
+                            </td>
+                            <td style="width:67.15pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="edad_paciente" style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt;"><span style="font-family:'Poppins-Light';">Edad: {{edad_paciente}}&nbsp;</span></p>
+                            </td>
+                            <td style="width:161.45pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="fecha_paciente" style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt;"><span style="font-family:'Poppins-Light';">Fecha Evaluaci&oacute;n: {{fecha_paciente}}</span></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:208.7pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="mail_paciente" style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt; font-family:'Poppins-Light';"><span style="font-family:'Poppins-Light';">Mail:</span> {{mail_paciente}}</p>
+                            </td>
+                            <td style="width:67.15pt; border-top-style:solid; border-top-width:0.75pt; border-right:0.75pt solid #ffffff; border-left-style:solid; border-left-width:0.75pt; border-bottom:0.75pt solid #ffffff; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                            <td style="width:161.45pt; border-top-style:solid; border-top-width:0.75pt; border-right:0.75pt solid #ffffff; border-left:0.75pt solid #ffffff; border-bottom:0.75pt solid #ffffff; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; line-height:108%; font-size:11pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </br></br>
+
+                <!-- SECCION DATOS DE FUERZA -->
+
+                <strong style="font-family:'Poppins-Light';" align="justify">&emsp;&nbsp;Resultados Evaluaci&oacute;n de Fuerza</strong>
+            </br></br>
+                <table cellpadding="0" cellspacing="0" style="width:475.85pt; border:0.75pt solid #000000; border-collapse:collapse;" align="center">
+                    <tbody>
+                        <tr style="height:13.65pt;">
+                            <td rowspan="2" style="width:118.55pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Par&aacute;metro&nbsp;</span></strong></p>
+                            </td>
+                            <td colspan="2" style="width:166.6pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Valor Obtenido</span></strong></p>
+                            </td>
+                            <td rowspan="2" style="width:64.95pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Valor Esperado</span></strong></p>
+                            </td>
+                            <td rowspan="2" style="width:81.8pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Asimetr&iacute;a Entre Extremidades</span></strong></p>
+                            </td>
+                        </tr>
+                        <tr style="height:13.65pt;">
+                            <td style="width:75.75pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Derecha</span></strong></p>
+                            </td>
+                            <td style="width:80.05pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><strong><span style="font-family:'Poppins-Light';">Izquierda</span></strong></p>
+                            </td>
+                        </tr>
+                        <tr style="height:27.3pt;">
+                            <td style="width:118.55pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">Fuerza Extensora de Rodilla (N)</span></p>
+                            </td>
+                            <td style="width:75.75pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="iqt_der" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{iqt_der}} N</span></p>
+                            </td>
+                            <td style="width:80.05pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="iqt_izq" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{iqt_izq}} N</span></p>
+                            </td>
+                            <td style="width:64.95pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:Poppins;">480 &ndash; 670 N</span></p>
+                            </td>
+                            <td style="width:81.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:27.3pt;">
+                            <td style="width:118.55pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">Fuerza Flexora de Rodilla (N)</span></p>
+                            </td>
+                            <td style="width:75.75pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="cc_der" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{cc_der}} N</span></p>
+                            </td>
+                            <td style="width:80.05pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="cc_izq" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{cc_izq}} N</span></p>
+                            </td>
+                            <td style="width:64.95pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:0pt; text-align:center; font-size:10pt;"><span style="font-family:Poppins;">270 &ndash; 380 N</span></p>
+                            </td>
+                            <td style="width:81.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:27.3pt;">
+                            <td style="width:118.55pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">Relaci&oacute;n Isquio-Cuadricipital</span></p>
+                            </td>
+                            <td style="width:75.75pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="frel_der" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{frel_der}}</span></p>
+                            </td>
+                            <td style="width:80.05pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="frel_izq" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{frel_izq}}</span></p>
+                            </td>
+                            <td style="width:64.95pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:Poppins;">0.55- 0.65</span></p>
+                            </td>
+                            <td style="width:81.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:27.3pt;">
+                            <td style="width:118.55pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">Fuerza de Gl&uacute;teo Medio</span></p>
+                            </td>
+                            <td style="width:75.75pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="glut_medio_der" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{glut_medio_der}} N</span></p>
+                            </td>
+                            <td style="width:80.05pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p id="glut_medio_izq" style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">{{glut_medio_izq}} N</span></p>
+                            </td>
+                            <td style="width:64.95pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">151 &ndash; 221 N</span></p>
+                            </td>
+                            <td style="width:81.8pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                <p style="margin-top:5pt; margin-bottom:8pt; text-align:center; line-height:108%; font-size:10pt;"><span style="font-family:'Poppins-Light';">&nbsp;</span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </br></br>
+
+                <!-- SECCION GRAFICOS -->
+
+                <table cellpadding="0" cellspacing="0" style="width:476.95pt; border:0.75pt solid #000000; border-collapse:collapse;" align="center">
+                    <tbody>
+                        <tr style="height:19pt;">
+                            <td style="width:227.3pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_iqt_izq}}
+                            </td>
+                            <td style="width:227.3pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_iqt_der}}
+                            </td>
+                        </tr>
+                        <tr style="height:18.4pt;">
+                            <td style="width:227.3pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_cc_izq}}
+                            </td>
+                            <td style="width:227.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_cc_der}}
+                            </td>
+                        </tr>
+                        <tr style="height:15.95pt;">
+                            <td style="width:227.3pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_glut_medio_izq}}
+                            </td>
+                            <td style="width:227.3pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                                {{grafico_glut_medio_der}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </br></br>
+                <hr>
+
+            </br>
+
+                <!-- SECCION DIAGNOSTICO -->
+
+                <p style="font-family:'Poppins-Light';" text-align="justify">&emsp;&emsp;Hallazgos</p>
+                <table cellpadding="0" cellspacing="0" style="width:475.85pt; border:0.75pt solid #000000; border-collapse:collapse;" align="center">
+                    <tbody>
+                        <tr style="height: 150px;">
+                            <td style="width:227.3pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;">
+                                <p id="hallazgos" style="margin-top:5pt; margin-bottom:0pt; text-align:justify; font-size:11pt;font-family:'Poppins-Light';"><span style="font-family:'Poppins-Light';">{{hallazgos}}</span></p>
+                            </td>
+                    </tbody>
+                </table>
+            </br></br>
+                <hr>
+            </br>
+                <p style="font-family:'Poppins-Light';" text-align="justify">&emsp;&emsp;Recomendaciones</p>
+                <table cellpadding="0" cellspacing="0" style="width:475.85pt; border:0.75pt solid #000000; border-collapse:collapse;" align="center">
+                    <tbody>
+                        <tr style="height: 300px;">
+                            <td style="width:227.3pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;">
+                                <p id="recomendaciones" style="margin-top:5pt; margin-bottom:0pt; text-align:justify; font-size:11pt;font-family:'Poppins-Light';"><span style="font-family:'Poppins-Light';">{{recomendaciones}}</span></p>
+                            </td>
+                    </tbody>
+                </table>
+
+            </br></br>
+
+            <img src="https://myfiles.space/user_files/129545_1876ad20ffd4a58d/1662590128_plantilla-evaluacion-fuerzas/1662590128_plantilla-evaluacion-fuerzas-1.png" 
+            width="148" height="58" style="margin-left:2.3in ;">             
+                <div class ="end_test">
+            
+
+                    <p style="font-family:'Poppins-Light';">Unidad de Biomec&aacute;nica</p>
+                </div>
+            </div>
+
+            <!-- SECCION PIE DE PAGINA -->
+
+            <div class="footer">
+                <p style="font-family:'Poppins-Light'; color: #F36F59;"><a href="mailto:you@justbetter.cl" style="color:#000000">you@justbetter.cl</a>
+                <strong>&nbsp;/&nbsp;</strong><span style="color: #000000;"> +56 933 809 726</span> 
+                <strong>&nbsp;/&nbsp;</strong><span>&nbsp;<img src="https://myfiles.space/user_files/129545_1876ad20ffd4a58d/1662590128_plantilla-evaluacion-fuerzas/1662590128_plantilla-evaluacion-fuerzas-8.png" style="display: inline;">
+                    <span>&nbsp;&nbsp;</span><a href="https://www.instagram.com/you.justbetter/" style="color: #000000;">you.justbetter</a></span>
+                </p>
+                <p style="font-family:'Poppins-Light'; color: #000000;">San Pascual 736,&nbsp; Las Condes</p>
+            </div>
+        </body>
+    </div>
+</html>
