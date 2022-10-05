@@ -6,7 +6,7 @@ import numpy as np
 import io
 import base64
 from jinja2 import Environment, FileSystemLoader
-from fpdf import FPDF
+import pdfkit
 
 
 # def create_download_link(val, filename):
@@ -296,16 +296,7 @@ template = env.get_template('template.html.jinja')
 html_data = template.render(datos_paciente)
 view = components.html(html_data,height=500, width=810, scrolling=True)
 
-st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
-st.write('Apreta el botón para realizar tu descarga!')
-
-pdf = FPDF()
-pdf.add_page()
-# pdf.set_font('Poppins-Light', size = 11)
-# pdf.image(base_pdf)
-pdf.output('informe.pdf', './')
-
-options = {
+option = {
     'page-size': 'Letter',
     'encoding' : "UTF-8",
     'margin-top': '0.35in',
@@ -314,12 +305,33 @@ options = {
     'margin-right': '0.75in'
 }
 
-# informe = pdfkit.from_string(html_data, f'Informe {npaciente}.pdf', options=options)
+with open('informe.html', 'r+') as res_html:
+    res_html.write(html_data)
+    pdfkit.from_file(res_html, 'informe.pdf', options = option)
+    di = st.download_button('Descargar Informe',
+        data = res_html,
+        file_name= f'Informe {npaciente}')
 
-# doc = aw.Document()
+st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
+st.write('Apreta el botón para realizar tu descarga!')
 
-# di = st.download_button('Descargar Informe',
-# data = informe)
+
+
+
+
+
+
+# pdf = FPDF()
+# pdf.add_page()
+# pdf.set_font('Arial', size = 11)
+# pdf.cell(txt=html_data)
+# # pdf.image(base_pdf)
+# pdf.output('informe.pdf')
+
+
+
+
+
 
 
 
