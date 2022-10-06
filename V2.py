@@ -8,6 +8,8 @@ import base64
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
+config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
+
 
 st.title('Generación Informe de Fuerzas')
 st.write('---')
@@ -296,7 +298,8 @@ option = {
 
 with open(f'informe.html', 'r+') as res_html:
     res_html.write(html_data)
-    pdf = pdfkit.from_file('informe.html', output_path=False, options=option)
+    pdf = pdfkit.from_file('informe.html', output_path=False, options=option, configuration=config)
+    
 
 
 
@@ -307,3 +310,18 @@ st.write('Apreta el botón para realizar tu descarga!')
 di = st.download_button('Descargar Informe',
     data = pdf,
     file_name= f'Informe {npaciente}.pdf')
+
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
