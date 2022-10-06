@@ -9,17 +9,6 @@ from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
 
-# def create_download_link(val, filename):
-#     b64 = base64.b64encode(val)
-#     return f"<a href='data:application/octet-stream;base64,{b64.decode()}' download='{filename}.pdf'>Download file</a>"
-
-
-# with open('style.css') as css:
-#     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html= True)
-
-# with open('Miscelaneo\YJB Logo.png', 'rb') as logo:
-#     logo_64 = base64.b64encode(logo.read())
-
 st.title('Generación Informe de Fuerzas')
 st.write('---')
 st.subheader('Procesamiento y Visualización de Datos')
@@ -264,7 +253,6 @@ with st.sidebar:
 
 
     datos_paciente = {
-        # "logo_64" : f"<img src='data:image/png;base64,{logo_64}' width='300' height='180'/>",
         "nombre_paciente" : npaciente,
         "edad_paciente" : epaciente,
         "fecha_paciente" : fpaciente.strftime("%d/%m/%Y"),
@@ -297,6 +285,7 @@ html_data = template.render(datos_paciente)
 view = components.html(html_data,height=500, width=810, scrolling=True)
 
 option = {
+    'enable-local-file-access': '',
     'page-size': 'Letter',
     'encoding' : "UTF-8",
     'margin-top': '0.35in',
@@ -305,55 +294,16 @@ option = {
     'margin-right': '0.75in'
 }
 
-with open('informe.html', 'r+') as res_html:
+with open(f'informe.html', 'r+') as res_html:
     res_html.write(html_data)
-    pdfkit.from_file(res_html, 'informe.pdf', options = option)
-    di = st.download_button('Descargar Informe',
-        data = res_html,
-        file_name= f'Informe {npaciente}')
+    
+pdf = pdfkit.from_file('informe.html', output_path=False, options=option, verbose=True)
+
 
 st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
 st.write('Apreta el botón para realizar tu descarga!')
 
 
-
-
-
-
-
-# pdf = FPDF()
-# pdf.add_page()
-# pdf.set_font('Arial', size = 11)
-# pdf.cell(txt=html_data)
-# # pdf.image(base_pdf)
-# pdf.output('informe.pdf')
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    # informe = pdfkit.from_string(html_data, 'informe.pdf')
-
-
-
-
-
-
-
-
-
-
-                
-
-
-
-
-
+di = st.download_button('Descargar Informe',
+    data = pdf,
+    file_name= f'Informe {npaciente}.pdf')
