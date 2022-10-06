@@ -296,8 +296,8 @@ option = {
 
 with open(f'informe.html', 'r+') as res_html:
     res_html.write(html_data)
-    
-pdf = pdfkit.from_file('informe.html', output_path=False, options=option, verbose=True)
+    pdf = pdfkit.from_file('informe.html', output_path=False, options=option, verbose=True)
+
 
 
 st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
