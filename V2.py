@@ -8,8 +8,6 @@ import base64
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
-config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
-
 
 st.title('Generación Informe de Fuerzas')
 st.write('---')
@@ -295,6 +293,8 @@ option = {
     'margin-bottom': '0.75in',
     'margin-right': '0.75in'
 }
+
+config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
 
 with open(f'informe.html', 'r+') as res_html:
     res_html.write(html_data)
