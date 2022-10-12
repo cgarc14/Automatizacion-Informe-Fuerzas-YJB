@@ -296,7 +296,7 @@ option = {
     'margin-right': '0.75in'
 }
 
-config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
+config = pdfkit.configuration(wkhtmltopdf="wkhtmltopdf.exe")
 
 with open(f'informe_base.html', 'r+') as res_html:
     res_html.write(html_data)
