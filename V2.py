@@ -102,7 +102,7 @@ if data_csv is not None:
                     fig.seek(0)
 
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8')
-                    graficos['grafico_cc_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>" 
+                    graficos['grafico_cc_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>" 
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_cc_izq']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_cc_izq']} N**")  
@@ -127,7 +127,7 @@ if data_csv is not None:
                     fig.seek(0)             
 
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8') 
-                    graficos['grafico_iqt_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>"
+                    graficos['grafico_iqt_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>"
 
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_iqt_izq']} N**")
@@ -151,7 +151,7 @@ if data_csv is not None:
                     fig.seek(0)
 
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8')
-                    graficos['grafico_gm_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>"
+                    graficos['grafico_gm_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>"
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_gm_izq']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_gm_izq']} N**")
@@ -176,7 +176,7 @@ if data_csv is not None:
 
                     fig.seek(0)
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8')
-                    graficos['grafico_iqt_der'] = f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>"
+                    graficos['grafico_iqt_der'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>"
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_iqt_der']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_iqt_der']} N**")
@@ -199,7 +199,7 @@ if data_csv is not None:
                     fig.seek(0)
                     
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8')
-                    graficos['grafico_cc_der']= f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>" 
+                    graficos['grafico_cc_der']= f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>" 
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_cc_der']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_cc_der']} N**")
@@ -221,7 +221,7 @@ if data_csv is not None:
                     
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8')
                     fig.seek(0)          
-                    graficos['grafico_gm_der'] = f"<img src='data:image/png;base64,{fig_64}' width='300' height='180'/>"     
+                    graficos['grafico_gm_der'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>"     
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_gm_der']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_gm_der']} N**")                 
@@ -271,8 +271,8 @@ with st.sidebar:
         "grafico_iqt_der" : graficos['grafico_iqt_der'],
         "grafico_cc_izq" : graficos['grafico_cc_izq'],
         "grafico_cc_der" : graficos['grafico_cc_der'],
-        "grafico_gm_izq" : graficos['grafico_gm_izq'],
-        "grafico_gm_der" : graficos['grafico_gm_der'],
+        "grafico_glut_medio_izq" : graficos['grafico_gm_izq'],
+        "grafico_glut_medio_der" : graficos['grafico_gm_der'],
         "hallazgos" : hallazgos,
         "recomendaciones" : recomendaciones
         
@@ -290,13 +290,9 @@ option = {
     'enable-local-file-access': '',
     'page-size': 'Letter',
     'encoding' : "UTF-8",
-    'margin-top': '0.35in',
-    'margin-left': '0.75in',
-    'margin-bottom': '0.75in',
-    'margin-right': '0.75in'
+    'disable-smart-shrinking':'',
+    'image-dpi': '600'
 }
-
-
 
 with open(f'informe_base.html', 'r+') as res_html:
     res_html.write(html_data)
