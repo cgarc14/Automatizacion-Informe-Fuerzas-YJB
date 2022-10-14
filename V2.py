@@ -290,7 +290,7 @@ option = {
     'enable-local-file-access': '',
     'page-size': 'Letter',
     'encoding' : "UTF-8",
-    'disable-smart-shrinking':'',
+    #'disable-smart-shrinking':'',
     'image-dpi': '600'
 }
 
