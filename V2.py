@@ -290,8 +290,8 @@ option = {
     'enable-local-file-access': '',
     'page-size': 'Letter',
     'encoding' : "UTF-8",
-    #'disable-smart-shrinking':'',
-    'image-dpi': '600'
+    'disable-smart-shrinking':'',
+    #'image-dpi': '600'
 }
 
 with open(f'informe_base.html', 'r+') as res_html:
