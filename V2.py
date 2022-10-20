@@ -309,11 +309,9 @@ option = {
     'image-dpi': '600'
 }
 
-config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
-
 with open(f'informe_base.html', 'r+') as res_html:
     res_html.write(html_data)
-    pdf = pdfkit.from_file('informe_base.html', output_path=False, options=option, configuration=config)
+    pdf = pdfkit.from_file('informe_base.html', output_path=False, options=option)
     res_html.close()
 
 st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
