@@ -8,18 +8,17 @@ import base64
 from jinja2 import Environment, FileSystemLoader
 import pdfkit
 
-
-
-
 st.title('Generación Informe de Fuerzas')
 st.write('---')
 st.subheader('Procesamiento y Visualización de Datos')
 
 st.write('Primero, **sube tus archivos CSV**.')
+st.warning('Sólo se procesarán los archivos CSV que contengan dentro de su nombre los formatos: **CC_IZQ**, **CC_DER**, **IQT_IZQ**, **IQT_DER**, **GLUT_MEDIO_IZQ**, **GLUT_MEDIO_DER**.')
 data_csv = st.file_uploader(label = 'Sube los CSV aquí.', type = 'csv', accept_multiple_files=True)
 
 if data_csv:
     st.success('Archivos subidos! Ahora puedes verlos y comenzar a editar la plantilla del informe!')
+    st.info('**IMPORTANTE:** Existen dos valores de fuerzas para cada resultado: **Máximo** y **Estimado**. El primero es el valor más alto obtenido, mientras que el segundo es un valor ajustado y más recomendado.')
 
 csv_base = pd.DataFrame()
 
@@ -52,12 +51,12 @@ datos_diagnostico = {
 }
 
 graficos = {
-    "grafico_iqt_izq" : None,
-    "grafico_iqt_der" : None,
-    "grafico_cc_izq" : None,
-    "grafico_cc_der" : None,
-    "grafico_gm_izq" : None,
-    "grafico_gm_der" : None
+    "grafico_iqt_izq" : '',
+    "grafico_iqt_der" : '',
+    "grafico_cc_izq" : '',
+    "grafico_cc_der" : '',
+    "grafico_gm_izq" : '',
+    "grafico_gm_der" : ''
 }
 
 frel_der = 0
@@ -65,6 +64,8 @@ frel_izq = 0
 
 if data_csv is not None:
     
+    
+
     col1, col2 = st.columns(2, gap='medium')
 
     for csv in data_csv:
@@ -240,12 +241,22 @@ except:
 with st.sidebar:
     st.title('Evaluación del Paciente')
     st.write('---')
+    st.info('Para guardar tu información en el Informe, puedes apretar **ctrl + enter** o también **hacer click fuera del campo** que estás llenando!')
     st.subheader('Datos del Paciente')
     with st.expander('Ver datos del paciente'):
         npaciente = st.text_input('Nombre del Paciente')
         epaciente = st.text_input('Edad del Paciente')
         mpaciente = st.text_input('Mail del Paciente')
         fpaciente = st.date_input('Fecha de Evaluación del Paciente')
+    st.write('---')
+    st.subheader('Asimetría entre Extremidades del Paciente')
+    with st.expander('Ver datos de Asimetría'):
+        asimetria_ext = st.text_input('Ingresa la Asimetría de Fuerza Extensiva:')
+        asimetria_flex = st.text_input('Ingresa la Asimetría de Fuerza Flexora:')
+        asimetria_rel = st.text_input('Ingresa la Asimetría de Relación Isquio-Cuadricipital:')
+        asimetria_gm = st.text_input('Ingresa la Asimetría de Fuerza en Glúteo Medio:')
+        
+
     st.write('---')
     st.subheader('Diagnóstico del Paciente')
     hallazgos = st.text_area('Hallazgos')
@@ -267,6 +278,10 @@ with st.sidebar:
         "frel_izq" : frel_izq,
         "glut_medio_der" : f_mean['f_gm_der'],
         "glut_medio_izq" : f_mean['f_gm_izq'],
+        "asimetria_ext" : asimetria_ext,       
+        "asimetria_flex" : asimetria_flex,
+        "asimetria_rel" : asimetria_rel,
+        "asimetria_gm" : asimetria_gm,
         "grafico_iqt_izq" : graficos['grafico_iqt_izq'],
         "grafico_iqt_der" : graficos['grafico_iqt_der'],
         "grafico_cc_izq" : graficos['grafico_cc_izq'],
@@ -290,16 +305,16 @@ option = {
     'enable-local-file-access': '',
     'page-size': 'Letter',
     'encoding' : "UTF-8",
-    'disable-smart-shrinking':'',
-    #'image-dpi': '600'
+    'disable-smart-shrinking': '',
+    'image-dpi': '600'
 }
+
+config = pdfkit.configuration(wkhtmltopdf="C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe")
 
 with open(f'informe_base.html', 'r+') as res_html:
     res_html.write(html_data)
-    pdf = pdfkit.from_file('informe_base.html', output_path=False, options=option)
-
-# pdf = pdfkit.from_string(html_data, output_path=False, configuration=config, options=option)
-
+    pdf = pdfkit.from_file('informe_base.html', output_path=False, options=option, configuration=config)
+    res_html.close()
 
 st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
 st.write('Apreta el botón para realizar tu descarga!')
@@ -308,18 +323,3 @@ st.write('Apreta el botón para realizar tu descarga!')
 di = st.download_button('Descargar Informe',
     data = pdf,
     file_name= f'Informe {npaciente}.pdf')
-
-
-
-
-
-
-
-
-
-                
-
-
-
-
-
