@@ -43,8 +43,6 @@ f_mean = {
     "f_gm_izq" : 0
 }
 
-
-
 datos_diagnostico = {
     "hallazgos" : None,
     "recomendaciones" : None
@@ -64,8 +62,6 @@ frel_izq = 0
 
 if data_csv is not None:
     
-    
-
     col1, col2 = st.columns(2, gap='medium')
 
     for csv in data_csv:
@@ -112,8 +108,6 @@ if data_csv is not None:
                 with st.expander('Datos Isquiotibial Izquierdo'):
                     f_max["f_iqt_izq"] = data_max
                     f_mean["f_iqt_izq"] = data_mean
-                    
-
                     fig = io.BytesIO()
 
                     grafico = plt.figure(figsize=(10, 4))
@@ -129,7 +123,6 @@ if data_csv is not None:
 
                     fig_64 = base64.b64encode(fig.getvalue()).decode('utf-8') 
                     graficos['grafico_iqt_izq'] = f"<img src='data:image/png;base64,{fig_64}' width='305' height='180'/>"
-
                     
                     st.write(f"Fuerza Máxima: **{f_max['f_iqt_izq']} N**")
                     st.write(f"Promedio Estimado: **{f_mean['f_iqt_izq']} N**")
@@ -234,8 +227,7 @@ try:
         
 except:
     pass
-      
-
+    
         # BARRA LATERAL
 
 with st.sidebar:
@@ -256,14 +248,11 @@ with st.sidebar:
         asimetria_rel = st.text_input('Ingresa la Asimetría de Relación Isquio-Cuadricipital:')
         asimetria_gm = st.text_input('Ingresa la Asimetría de Fuerza en Glúteo Medio:')
         
-
     st.write('---')
     st.subheader('Diagnóstico del Paciente')
     hallazgos = st.text_area('Hallazgos')
     recomendaciones = st.text_area('Recomendaciones al Paciente')
     st.write('---')
-
-
 
     datos_paciente = {
         "nombre_paciente" : npaciente,
@@ -316,7 +305,6 @@ with open(f'informe_base.html', 'r+') as res_html:
 
 st.subheader('Si está todo listo, puedes descargar el informe a continuación.')
 st.write('Apreta el botón para realizar tu descarga!')
-
 
 di = st.download_button('Descargar Informe',
     data = pdf,
