@@ -92,7 +92,7 @@ if data_csv is not None:
                     graficos['grafico_cc_izq'] = plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Cuadricipital Izquierdo [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches='tight', format = 'png')
                     st.pyplot(grafico)
 
@@ -115,7 +115,7 @@ if data_csv is not None:
                     plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Isquiotibial Izquierdo [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches = 'tight', format = 'png')
                     st.pyplot(grafico)    
 
@@ -138,7 +138,7 @@ if data_csv is not None:
                     graficos['grafico_gm_izq'] = plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Glúteo Medio Izquierdo [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches='tight', format = 'png')
                     st.pyplot(grafico)
 
@@ -164,7 +164,7 @@ if data_csv is not None:
                     graficos['grafico_iqt_der'] = plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Isquiotibial Derecho [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches='tight', format = 'png')
                     st.pyplot(grafico)
 
@@ -186,7 +186,7 @@ if data_csv is not None:
                     graficos['grafico_cc_der'] = plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Cuadricipital Derecho [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches='tight', format = 'png')
                     st.pyplot(grafico)
 
@@ -209,7 +209,7 @@ if data_csv is not None:
                     graficos['grafico_gm_der'] = plt.scatter(df['ID'], df['Fuerza'], color = '#F36F59')
                     plt.title('Fuerza Obtenida Glúteo Medio Derecho [N]')
                     plt.xlabel('Puntos de Medición')
-                    plt.ylabel('Fuerza Obtenida')
+                    plt.ylabel('Fuerza Obtenida [N]')
                     plt.savefig(fig, bbox_inches='tight', format = 'png')
                     st.pyplot(grafico)
                     
