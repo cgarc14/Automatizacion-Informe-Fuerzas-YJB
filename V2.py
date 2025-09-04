@@ -223,8 +223,17 @@ if data_csv is not None:
 try:
     frel_der = round(f_mean['f_iqt_der']/f_mean['f_cc_der'], 2)
     
-    frel_izq = round(f_mean['f_iqt_izq']/f_mean['f_cc_izq'], 2)    
-        
+    frel_izq = round(f_mean['f_iqt_izq']/f_mean['f_cc_izq'], 2) 
+
+    f_ext = (f_mean['f_cc_der'], f_mean['f_cc_izq'])
+    f_flex = (f_mean['f_iqt_der'], f_mean['f_iqt_izq'])
+    f_rel = (frel_der, frel_izq)
+    
+    asimetria_ext = round(((max(f_ext) - min(f_ext)) / max(f_ext)),2)   
+    asimetria_flex = round(((max(f_flex) - min(f_flex)) / max(f_flex)),2)
+    asimetria_rel = round(((max(f_rel) - min(f_rel)) / max(f_rel)),2)
+    asimetria_gm = 0
+
 except:
     pass
     
@@ -240,13 +249,13 @@ with st.sidebar:
         epaciente = st.text_input('Edad del Paciente')
         mpaciente = st.text_input('Mail del Paciente')
         fpaciente = st.date_input('Fecha de Evaluación del Paciente')
-    st.write('---')
-    st.subheader('Asimetría entre Extremidades del Paciente')
-    with st.expander('Ver datos de Asimetría'):
-        asimetria_ext = st.text_input('Ingresa la Asimetría de Fuerza Extensiva:')
-        asimetria_flex = st.text_input('Ingresa la Asimetría de Fuerza Flexora:')
-        asimetria_rel = st.text_input('Ingresa la Asimetría de Relación Isquio-Cuadricipital:')
-        asimetria_gm = st.text_input('Ingresa la Asimetría de Fuerza en Glúteo Medio:')
+    # st.write('---')
+    # st.subheader('Asimetría entre Extremidades del Paciente')
+    # with st.expander('Ver datos de Asimetría'):
+    #     asimetria_ext = st.text_input('Ingresa la Asimetría de Fuerza Extensiva:')
+    #     asimetria_flex = st.text_input('Ingresa la Asimetría de Fuerza Flexora:')
+    #     asimetria_rel = st.text_input('Ingresa la Asimetría de Relación Isquio-Cuadricipital:')
+    #     asimetria_gm = st.text_input('Ingresa la Asimetría de Fuerza en Glúteo Medio:')
         
     st.write('---')
     st.subheader('Diagnóstico del Paciente')
@@ -284,6 +293,8 @@ with st.sidebar:
 st.write('---')
 st.subheader('Creación del Informe')
 st.write('La plantilla se irá editando a medida que llenes los datos en la sección de la izquierda! Por ahora, los datos de la sección anterior ya están ingresados.')
+
+# datos_paciente
 
 env = Environment(loader = FileSystemLoader('./'))
 template = env.get_template('template.html.jinja')
