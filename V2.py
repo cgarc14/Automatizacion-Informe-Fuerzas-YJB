@@ -235,6 +235,11 @@ try:
     asimetria_gm = 0
 
 except:
+    asimetria_ext = 0   
+    asimetria_flex = 0
+    asimetria_rel = 0
+    asimetria_gm = 0
+
     pass
     
         # BARRA LATERAL
@@ -320,3 +325,4 @@ st.write('Apreta el botón para realizar tu descarga!')
 di = st.download_button('Descargar Informe',
     data = pdf,
     file_name= f'Informe {npaciente}.pdf')
+
